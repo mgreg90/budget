@@ -1,5 +1,7 @@
 class AccountsController < ApplicationController
   
+  before_filter :authorize
+  
   def create
   end
 

@@ -1,2 +1,5 @@
-<h1>Accounts#show</h1>
-<p>Find me in app/views/accounts/show.html.erb</p>
+<%= form_tag create_from_csv_path, method: :post, multipart: true do %>
+  Upload CSV: <%= file_field_tag 'transactions_file', accept: 'text/csv' %>
+  <br>
+  <%= submit_tag 'Submit' %>
+<% end %>

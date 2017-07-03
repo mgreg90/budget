@@ -16,10 +16,13 @@ ActiveRecord::Schema.define(version: 20170703062653) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
+    t.string   "name"
     t.integer  "user_id"
-    t.boolean  "primary",    default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "primary",                  default: false
+    t.integer  "initial_balance_in_cents", default: 0
+    t.datetime "initial_balance_time"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "issuer_id"
     t.index ["issuer_id"], name: "index_accounts_on_issuer_id", using: :btree
     t.index ["user_id"], name: "index_accounts_on_user_id", using: :btree

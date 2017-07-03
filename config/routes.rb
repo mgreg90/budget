@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'transactions/create_many_from_csv'
+
   root 'users#show'
   # root        GET    /                       user#show
   
@@ -17,5 +19,8 @@ Rails.application.routes.draw do
   # accounts    POST   /accounts(.:format)     accounts#create
   # new_account GET    /accounts/new(.:format) accounts#new
   # account     GET    /accounts/:id(.:format) accounts#show
+  
+  post '/accounts/transactions/create_many_from_csv', to: 'transactions#create_many_from_csv', as: 'create_from_csv' # TODO FIX THIS ROUTE!!!!
+  
   
 end

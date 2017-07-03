@@ -15,6 +15,7 @@ module Budget
     # 
     config.autoload_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('app', 'modules')
+    config.autoload_paths << Rails.root.join('app', 'services')
     
   end
 end
